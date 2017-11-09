@@ -10,5 +10,9 @@
         android:id="@+id/gridView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:verticalSpacing="2dp"
+        android:horizontalSpacing="2dp"
+        android:paddingTop="2dp"
+        android:background="#e5e5e5"
         android:numColumns="3"/>
 </FrameLayout>

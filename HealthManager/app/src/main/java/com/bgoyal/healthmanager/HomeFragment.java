@@ -39,8 +39,10 @@ public class HomeFragment extends Fragment {
         gridView = (GridView) view.findViewById(R.id.gridView);
 
         GridAdapter adapter = new GridAdapter(getContext());
-        adapter.addItem("Water");
-        adapter.addItem("Blood Pressure");
+        adapter.addItem("Water",R.drawable.icon_water);
+        adapter.addItem("Blood Pressure", R.drawable.icon_blood_pressure);
+        adapter.addItem("Glucose Monitor", R.drawable.icon_glucose_monitor);
+        adapter.addItem("Medicines", R.drawable.icon_medicine);
 
         gridView.setAdapter(adapter);
 

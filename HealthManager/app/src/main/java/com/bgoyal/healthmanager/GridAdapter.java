@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,22 +21,23 @@ public class GridAdapter extends BaseAdapter {
 
     List<String> titles;
     Context context;
-    List<String> imageId;
+    List<Integer> imageId;
     private static LayoutInflater inflater=null;
 
 
     public GridAdapter(Context context) {
         super();
         titles = new ArrayList<>();
-        imageId = new ArrayList<>();
+        imageId = new ArrayList<Integer>();
         this.context= context;
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
 
-    public void addItem(String title) {
+    public void addItem(String title, int resId) {
         titles.add(title);
+        imageId.add(resId);
     }
 
 
@@ -65,7 +67,7 @@ public class GridAdapter extends BaseAdapter {
         holder.img=(ImageView) rowView.findViewById(R.id.itemImage);
 
         holder.tv.setText(titles.get(position));
-       // holder.img.setImageResource(imageId[position]);
+        holder.img.setImageResource(imageId.get(position));
 
         return rowView;
     }
